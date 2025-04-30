@@ -1,0 +1,68 @@
+def recommend_career_smart(interest, skill, work_style):
+    # Normalize inputs
+    interest = interest.lower()
+    skill = skill.lower()
+    work_style = work_style.lower()
+
+    # Smarter matching using keyword mapping
+    if "ai" in interest or "machine" in interest:
+        if "programming" in skill and work_style == "independent":
+            return "AI Engineer or Machine Learning Specialist"
+    
+    elif "psychology" in interest:
+        if "communication" in skill and "people" in work_style:
+            return "Clinical Psychologist or Counselor"
+    
+    elif "neuro" in interest:
+        if "research" in skill and work_style == "independent":
+            return "Neuroscientist or Research Analyst"
+    
+    elif "education" in interest or "teaching" in interest:
+        if "communication" in skill and "people" in work_style:
+            return "Lecturer or Educational Psychologist"
+    
+    elif "data" in interest or "analysis" in interest:
+        if "programming" in skill and work_style == "independent":
+            return "Data Scientist or Data Analyst"
+    
+    elif "linguistics" in interest or "language" in interest:
+        if "writing" in skill and work_style == "independent":
+            return "Computational Linguist or Language Researcher"
+    
+    elif "health" in interest or "care" in interest:
+        if "empathy" in skill and "people" in work_style:
+            return "Occupational Therapist or Healthcare Specialist"
+    
+    # Fallback option with advice
+    return (
+        "No exact match found, but here are some suggestions:\n"
+        "- Explore interdisciplinary roles based on your interests.\n"
+        "- Try combining your skill in '{}' with areas like AI, health, or education.".format(skill)
+    )
+    
+    elif "linguistics" in interest or "language" in interest:
+        if "writing" in skill and work_style == "independent":
+            return "Computational Linguist or Language Researcher"
+    
+    elif "health" in interest or "care" in interest:
+        if "empathy" in skill and "people" in work_style:
+            return "Occupational Therapist or Healthcare Specialist"
+    
+    # Fallback option with advice
+    return (
+        "No exact match found, but here are some suggestions:\n"
+        "- Explore interdisciplinary roles based on your interests.\n"
+        "- Try combining your skill in '{}' with areas like AI, health, or education.".format(skill)
+    )
+
+# Input section
+interest = input("Your interest (e.g., AI, psychology, neuroscience, education, data analysis, linguistics, healthcare): ")
+skill = input("Your top skill (e.g., programming, communication, research, writing, empathy): ")
+work_style = input("Work style (independent / people-oriented): ")
+
+# Recommendation
+career = recommend_career_smart(interest, skill, work_style)
+
+# Output
+print("\n🔍 Recommended Career Path:")
+print(f"👉 {career}")
